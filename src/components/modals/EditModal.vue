@@ -7,6 +7,7 @@ const toOptions = computed(() => cryptos.filter((c) => c !== fromCrypto.value))
 
 const cryptos = ['BTC', 'ETH', 'USDT'] as const
 type Crypto = (typeof cryptos)[number]
+
 const fromCrypto = ref<Crypto>('BTC')
 const toCrypto = ref<Crypto>('ETH')
 

@@ -9,9 +9,10 @@ const props = defineProps<{
 const emit = defineEmits(['close', 'refresh'])
 
 const cryptos = ['BTC', 'ETH', 'USDT'] as const
+type Crypto = (typeof cryptos)[number]
 
-const fromCrypto = ref<'BTC' | 'ETH' | 'USDT'>('BTC')
-const toCrypto = ref<'BTC' | 'ETH' | 'USDT'>('ETH')
+const fromCrypto = ref<Crypto>('BTC')
+const toCrypto = ref<Crypto>('ETH')
 const amount = ref<number>(0)
 
 const error = ref<string | null>(null)
